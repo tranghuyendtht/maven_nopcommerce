@@ -28,6 +28,8 @@
 		<faker.version>1.0.1</faker.version>
 		<log4j.version>1.2.16</log4j.version>
 		<reportng.version>1.1.4</reportng.version>
+		<owner.version>1.0.12</owner.version>
+		
 	</properties>
 
 	<!-- Quản lí thư viện -->
@@ -150,6 +152,13 @@
 			<version>1.18.24</version>
 			<scope>provided</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>org.aeonbits.owner</groupId>
+			<artifactId>owner</artifactId>
+			<version>${owner.version}</version>
+		</dependency>
+
 
 	</dependencies>
 

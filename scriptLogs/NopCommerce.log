@@ -72,3 +72,11 @@
 [2023-08-11 11:17:58,257] Checkout_By_Cheque - Step 02: Click to 'search' button 
 [2023-08-11 11:18:18,320] OS name = windows 10
 [2023-08-11 11:18:18,320] Driver instance name = firefoxdriver: firefox on windows (f8ae78cb-cf23-4be9-8bd3-0fca0dee3d9b)
+[2023-08-15 16:00:01,758] OS name = windows 10
+[2023-08-15 16:00:01,772] Cannot invoke "Object.toString()" because "this.driver" is null
+[2023-08-15 16:01:53,916] Pre-Condition - Step 01: Go page
+[2023-08-15 16:01:54,081] OS name = windows 10
+[2023-08-15 16:01:54,081] 
+[2023-08-15 16:13:27,074] Pre-Condition - Step 01: Go page
+[2023-08-15 16:13:27,217] OS name = windows 10
+[2023-08-15 16:13:27,217] 
