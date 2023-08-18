@@ -9,9 +9,12 @@ public class UserCheckoutPageUI {
 	public static final String CONFIRM_ORDER_INFORMATION = "xpath=//div[@class ='section payment-info']//td";
 	public static final String BILLING_ADDRESS_INFORMATION = "xpath=//div[@id='checkout-confirm-order-load']//div[@class='billing-info']//ul//li[@class='%s']";
 	public static final String PAYMENT_OR_SHIPPING_METHOD_INFORMATION = "xpath=//div[@class='%s']//li//span[@class='value']";
+	public static final String PAYMENT_OR_SHIPPING_METHOD_INFORMATION_ON_CHECKOUTPAGE = "xpath=//li[@class='%s']//span[@class='value']";
 	public static final String SHIPPING_ADDRESS_INFORMATION = "xpath=//div[@class='shipping-info-wrap']//ul/li[@class='%s']";
 	public static final String SUCCESSFULLY_ORDER_PROCESS_MESSAGE = "xpath=//div[@class='section order-completed']//strong[text()='Your order has been successfully processed!']";
 	public static final String ORDER_NUMBER = "xpath=//div[@class='order-number']//strong";
+	public static final String CONTINUE_BUTTON_COMPLETE = "xpath=//button[@class='button-1 order-completed-continue-button']";
+	public static final String MY_ACCOUNT_LINKTEXT = "xpath=//a[@class='ico-account']";
 	
 	public static final String SKU_PRODUCT_TEXT_ON_WISHLIST_PAGE = "xpath=//td[@class='sku']//span";
 	public static final String PRODUCT_IMAGE_ON_WISHLIST_PAGE = "xpath=//td[@class='product-picture']//a//img";

@@ -58,6 +58,12 @@ public class UserCheckoutPageObject extends BasePage{
 		waitForElementVisible(driver, UserCheckoutPageUI.PAYMENT_OR_SHIPPING_METHOD_INFORMATION,methodType);
 		return  getElementText(driver, UserCheckoutPageUI.PAYMENT_OR_SHIPPING_METHOD_INFORMATION,methodType);
 	}
+	
+	public String isPaymentOrShippingMethodInfoOnCheckoutPageDisplayed(String methodType) {
+		waitForElementVisible(driver, UserCheckoutPageUI.PAYMENT_OR_SHIPPING_METHOD_INFORMATION_ON_CHECKOUTPAGE,methodType);
+		return  getElementText(driver, UserCheckoutPageUI.PAYMENT_OR_SHIPPING_METHOD_INFORMATION_ON_CHECKOUTPAGE,methodType);
+	}
+	
 	public boolean isPaymentInfoDisplayByCategory(String categoryName, String textValue) {
 		waitForElementVisible(driver, UserCheckoutPageUI.SHIPPING_ADDRESS_INFORMATION,categoryName);
 		return  getElementText(driver, UserCheckoutPageUI.SHIPPING_ADDRESS_INFORMATION,categoryName).contains(textValue);
@@ -185,6 +191,7 @@ public class UserCheckoutPageObject extends BasePage{
 		String subCartTotalS = getElementText(driver, UserCheckoutPageUI.SUB_CART_TOTAL);
 		int subCartTotalI = Integer.valueOf(subCartTotalS.replaceAll("[^A-Za-z0-9]",""));
 		int productPriceI = Integer.valueOf(productPrice.replaceAll("[^A-Za-z0-9]",""));
+		giftWrapping = giftWrapping.split(" ")[1];
 		int giftWrappingI = Integer.valueOf(giftWrapping.replaceAll("[^A-Za-z0-9]",""));
 		int productQuantityI = Integer.valueOf(productQuantity);
 		if(subCartTotalI == productPriceI*productQuantityI + giftWrappingI) {
@@ -199,7 +206,7 @@ public class UserCheckoutPageObject extends BasePage{
 		boolean pass = true;
 		
 		waitForElementVisible(driver, UserCheckoutPageUI.SHIPPING_OR_TAX_ON_CART_TOTAL_BY_CLASSNAME,className);
-		String categoryValueS = getElementText(driver, UserCheckoutPageUI.SHIPPING_OR_TAX_ON_CART_TOTAL_BY_CLASSNAME);
+		String categoryValueS = getElementText(driver, UserCheckoutPageUI.SHIPPING_OR_TAX_ON_CART_TOTAL_BY_CLASSNAME,className);
 		int categoryValueI = Integer.valueOf(categoryValueS.replaceAll("[^A-Za-z0-9]",""));
 		int visibleValueI = Integer.valueOf(textValue.replaceAll("[^A-Za-z0-9]",""));
 		if(visibleValueI == categoryValueI) {
@@ -216,6 +223,7 @@ public class UserCheckoutPageObject extends BasePage{
 		String subCartTotalS = getElementText(driver, UserCheckoutPageUI.SUB_CART_TOTAL);
 		int subCartTotalI = Integer.valueOf(subCartTotalS.replaceAll("[^A-Za-z0-9]",""));
 		int productPriceI = Integer.valueOf(productPrice.replaceAll("[^A-Za-z0-9]",""));
+		giftWrapping = giftWrapping.split(" ")[1];
 		int giftWrappingI = Integer.valueOf(giftWrapping.replaceAll("[^A-Za-z0-9]",""));
 		int shippingI = Integer.valueOf(shipping.replaceAll("[^A-Za-z0-9]",""));
 		int taxI = Integer.valueOf(tax.replaceAll("[^A-Za-z0-9]",""));
@@ -235,6 +243,7 @@ public class UserCheckoutPageObject extends BasePage{
 		String subCartTotalS = getElementText(driver, UserCheckoutPageUI.SUB_CART_TOTAL);
 		int subCartTotalI = Integer.valueOf(subCartTotalS.replaceAll("[^A-Za-z0-9]",""));
 		int productPriceI = Integer.valueOf(productPrice.replaceAll("[^A-Za-z0-9]",""));
+		giftWrapping = giftWrapping.split(" ")[1];
 		int giftWrappingI = Integer.valueOf(giftWrapping.replaceAll("[^A-Za-z0-9]",""));
 		int shippingI = Integer.valueOf(shipping.replaceAll("[^A-Za-z0-9]",""));
 		int taxI = Integer.valueOf(tax.replaceAll("[^A-Za-z0-9]",""));
@@ -246,6 +255,11 @@ public class UserCheckoutPageObject extends BasePage{
 			 pass = false;
 		}
 		return pass;
+	}
+	public void clickToContinueButton() {
+		waitForElementClickable(driver, UserCheckoutPageUI.CONTINUE_BUTTON_COMPLETE);
+		clickToElement(driver, UserCheckoutPageUI.CONTINUE_BUTTON_COMPLETE);
+		
 	}
 
 

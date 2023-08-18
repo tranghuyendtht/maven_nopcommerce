@@ -111,15 +111,23 @@ public class UserSearchKeywordPageObject extends BasePage {
 	}
 
 	public void clickAddToCartButton() {
-		waitForElementClickable(driver, UserSearchKeywordPageUI.ADD_TO_CART_BUTTON);
-		clickToElement(driver, UserSearchKeywordPageUI.ADD_TO_CART_BUTTON);
+		sleepInSecond(1);
+		waitForElementClickable(driver, UserSearchKeywordPageUI.ADD_TO_CART_BUTTON_2);
+		clickToElement(driver, UserSearchKeywordPageUI.ADD_TO_CART_BUTTON_2);
 
 	}
 
 	public UserShoppingCartPageObject clickToShoppingCartLinktext() {
+		sleepInSecond(2);
 		waitForElementClickable(driver, UserSearchKeywordPageUI.SHOPPING_CART_LINKTEXT);
 		clickToElement(driver, UserSearchKeywordPageUI.SHOPPING_CART_LINKTEXT);
 		return PageGeneratorManager.getUserShoppingCartPage(driver);
+	}
+
+	public void clickToCloseIcon() {
+		waitForElementClickable(driver, UserSearchKeywordPageUI.CLOSE_ICON);
+		clickToElement(driver, UserSearchKeywordPageUI.CLOSE_ICON);
+		sleepInSecond(1);
 	}
 
 }

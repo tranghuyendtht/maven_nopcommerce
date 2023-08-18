@@ -6,6 +6,7 @@ import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import PageUIs.nopcommerce.user.UserSearchKeywordPageUI;
 import PageUIs.nopcommerce.user.UserShoppingCartPageUI;
 import PageUIs.nopcommerce.user.UserWishListPageUI;
 import commons.BasePage;
@@ -231,11 +232,12 @@ public class UserShoppingCartPageObject extends BasePage{
 	}
 
 	public void selectGiftWrapping(String giftWrapping) {
-		waitForElementClickable(driver, UserShoppingCartPageUI.GIFT_WRAPPING);
-		clickToElement(driver, UserShoppingCartPageUI.GIFT_WRAPPING);
+		waitForElementVisible(driver, UserShoppingCartPageUI.GIFT_WRAPPING);
+		selectItemInDefaultDropDown(driver, UserShoppingCartPageUI.GIFT_WRAPPING, giftWrapping);
 	}
 
 	public boolean isGiftWrappingDisplayed() {
+		sleepInSecond(1);
 		waitForElementVisible(driver, UserShoppingCartPageUI.GIFT_WRAPPING_STATUS);
 		return isElementDisplayed(driver, UserShoppingCartPageUI.GIFT_WRAPPING_STATUS);
 		
@@ -251,6 +253,12 @@ public class UserShoppingCartPageObject extends BasePage{
 		waitForElementClickable(driver, UserShoppingCartPageUI.CHECKOUT_BUTTON);
 		clickToElement(driver, UserShoppingCartPageUI.CHECKOUT_BUTTON);
 		return PageGeneratorManager.getUserCheckoutPage(driver);
+	}
+
+	public UserSearchKeywordPageObject clickToSearchButton() {
+		waitForElementClickable(driver, UserShoppingCartPageUI.SEARCH_BUTTON);
+		clickToElement(driver, UserShoppingCartPageUI.SEARCH_BUTTON);
+		return PageGeneratorManager.getUserSearchKeywordPage(driver);
 	}
 
 
