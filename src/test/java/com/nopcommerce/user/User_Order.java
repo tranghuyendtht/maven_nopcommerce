@@ -46,9 +46,10 @@ public class User_Order extends BaseTest {
 	String shoppingCartUrl;
 	String productQuantity;
 	String shipping, tax, giftWrapping;
-	String productNameLenovo, newQuantityLenovo, productPriceLenovo;
+	String productNameLenovo, newQuantityLenovo, productPriceLenovo, updateNewReOrderQuantity;
 	String firstName, lastName, emailAddress, country, state, city, address1, zipCode, phoneNumber;
 	String orderNumber;
+	String cardType, cardHolderName, cardNumber, expirationMonth, expirationYear, cardCode;
 
 	@Parameters({ "browser", "appUrl"})
 	@BeforeClass
@@ -68,9 +69,17 @@ public class User_Order extends BaseTest {
 		productNameLenovo = "Lenovo IdeaCentre 600 All-in-One PC";
 		productQuantity = "2";
 		newQuantityLenovo = "5";
+		updateNewReOrderQuantity = "10";
 		giftWrapping = "Yes [+$10.00]";
 		shipping = "$0.00";
 		tax = "$0.00";
+		
+		cardType = "Visa";
+		cardHolderName = "Trang Doan";
+		cardNumber = "4111 1111 1111 1111";
+		expirationMonth = "12";
+		expirationYear = "2023";
+		cardCode = "1243";
 
 		firstName = fakeData.getFirstName();
 		lastName = fakeData.getLastName();
@@ -200,11 +209,11 @@ public class User_Order extends BaseTest {
 	public void TC_05_Checkout_By_Cheque(Method method) {
 		ExtentTestManager.startTest(method.getName(), "TC_05_Checkout_By_Cheque");
 
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 05: Select 'Gift Wrapping' with value: " + giftWrapping);
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 01: Select 'Gift Wrapping' with value: " + giftWrapping);
 		userShoppingCartPage.selectGiftWrapping(giftWrapping);
 		
 
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 06: Verify updated info of gift wapping");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 02: Verify updated info of gift wapping");
 		verifyTrue(userShoppingCartPage.isGiftWrappingDisplayed());
 
 		ExtentTestManager.getTest().log(Status.INFO, 
@@ -212,60 +221,60 @@ public class User_Order extends BaseTest {
 		userShoppingCartPage.clickToAgreeTermCheckbox();
 		
 
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 08: Click to 'Checkout' button");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 03: Click to 'Checkout' button");
 		userCheckoutPage = userShoppingCartPage.clickToCheckoutButton();
 		
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Input to first name textbox with value: " + firstName);
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 04: Input to first name textbox with value: " + firstName);
 		userCheckoutPage.inputToTextboxById("BillingNewAddress_FirstName", firstName);
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 10: Input to last name textbox with value: " + lastName);
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 05: Input to last name textbox with value: " + lastName);
 		userCheckoutPage.inputToTextboxById("BillingNewAddress_LastName", lastName);
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 11: Input to email textbox with value: " + emailAddress);
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 06: Input to email textbox with value: " + emailAddress);
 		userCheckoutPage.inputToTextboxById("BillingNewAddress_Email", emailAddress);
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Select to country dropdownlist with value: " + country);
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 07: Select to country dropdownlist with value: " + country);
 		userCheckoutPage.selectCountryOrStateByValue("BillingNewAddress_CountryId",country);
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Select to state dropdownlist with value: " + state);
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 08: Select to state dropdownlist with value: " + state);
 		userCheckoutPage.selectCountryOrStateByValue("BillingNewAddress_StateProvinceId",state);
 		
 		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Input to city textbox with value: " + city);
 		userCheckoutPage.inputToTextboxById("BillingNewAddress_City", city);
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Input to address1 textbox with value: " + address1);
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 10: Input to address1 textbox with value: " + address1);
 		userCheckoutPage.inputToTextboxById("BillingNewAddress_Address1", address1);
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Input to zipCode textbox with value: " + zipCode);
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 11: Input to zipCode textbox with value: " + zipCode);
 		userCheckoutPage.inputToTextboxById("BillingNewAddress_ZipPostalCode", zipCode);
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Input to phonenumber textbox with value: " + phoneNumber);
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 12: Input to phonenumber textbox with value: " + phoneNumber);
 		userCheckoutPage.inputToTextboxById("BillingNewAddress_PhoneNumber", phoneNumber);
 
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Click to 'Continue' button");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 13: Click to 'Continue' button");
 		userCheckoutPage.clickToContinueButtonById("billing-buttons-container","Continue");
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Click to 'Next day air' checkbox");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 14: Click to 'Next day air' checkbox");
 		userCheckoutPage.clickToNextDayAirCheckbox();
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Click to 'Continue' button");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 15: Click to 'Continue' button");
 		userCheckoutPage.clickToContinueButtonById("shipping-method-buttons-container","Continue");
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Click to 'Check/Money Order' checkbox");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 16: Click to 'Check/Money Order' checkbox");
 		
 		userCheckoutPage.clickToCheckMoneyOrderCheckbox();
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Click to 'Continue' button");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 17: Click to 'Continue' button");
 		userCheckoutPage.clickToContinueButtonById("payment-method-buttons-container","Continue");
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Verify payment information");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 18: Verify payment information");
 		verifyEquals(userCheckoutPage.isConfirmOrderDisplayed(),"your order may be held for up to 10 days after we receive your check");
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Click to 'Continue' button");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 19: Click to 'Continue' button");
 		userCheckoutPage.clickToContinueButtonById("payment-info-buttons-container","Continue");
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Verify Billing Address Info");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 20: Verify Billing Address Info");
 		verifyTrue(userCheckoutPage.isBillingAddressInfoDisplayByCategory("name", firstName));
 		verifyTrue(userCheckoutPage.isBillingAddressInfoDisplayByCategory("name", lastName));
 		verifyTrue(userCheckoutPage.isBillingAddressInfoDisplayByCategory("email", emailAddress));
@@ -275,10 +284,10 @@ public class User_Order extends BaseTest {
 		verifyTrue(userCheckoutPage.isBillingAddressInfoDisplayByCategory("city-state-zip", state));
 		verifyTrue(userCheckoutPage.isBillingAddressInfoDisplayByCategory("country", country));
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Verify Payment Info");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 21: Verify Payment Info");
 		verifyTrue(userCheckoutPage.isPaymentOrShippingMethodInfoOnCheckoutPageDisplayed("payment-method").contains("Money Order"));
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Verify Shipping Address Info");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 22: Verify Shipping Address Info");
 		verifyTrue(userCheckoutPage.isPaymentInfoDisplayByCategory("name", firstName));
 		verifyTrue(userCheckoutPage.isPaymentInfoDisplayByCategory("name", lastName));
 		verifyTrue(userCheckoutPage.isPaymentInfoDisplayByCategory("email", emailAddress));
@@ -288,60 +297,60 @@ public class User_Order extends BaseTest {
 		verifyTrue(userCheckoutPage.isPaymentInfoDisplayByCategory("city-state-zip", state));
 		verifyTrue(userCheckoutPage.isPaymentInfoDisplayByCategory("country", country));
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Verify Shipping Method Info");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 23: Verify Shipping Method Info");
 		verifyTrue(userCheckoutPage.isPaymentOrShippingMethodInfoOnCheckoutPageDisplayed("shipping-method").contains("Next Day Air"));
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Verify Product Info");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 24: Verify Product Info");
 		verifyTrue(userCheckoutPage.isImageDisplayed());
 		verifyTrue(userCheckoutPage.isProductNameAddedOnWishlistPage(productNameLenovo));
 		verifyTrue(userCheckoutPage.isProductPriceAddedOnWishlistPage(productPriceLenovo));
 		verifyTrue(userCheckoutPage.isProductQuantityAddedOnWishlistPage(newQuantityLenovo));
 		verifyTrue(userCheckoutPage.isTotalFieldUpdated(productPriceLenovo, newQuantityLenovo));
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Verify Cart Total Info");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 25: Verify Cart Total Info");
 		verifyTrue(userCheckoutPage.verifySubCartTotalIsDisplayed(productPriceLenovo, newQuantityLenovo, giftWrapping));
 		verifyTrue(userCheckoutPage.verifyCartTotalIsDisplayedByClassName("shipping-cost", shipping));
 		verifyTrue(userCheckoutPage.verifyCartTotalIsDisplayedByClassName("tax-value", tax));
 		verifyTrue(userCheckoutPage.verifyCartTotalIsDisplayed(productPriceLenovo, newQuantityLenovo, giftWrapping, shipping, tax));
 		verifyTrue(userCheckoutPage.verifyPointIsDisplayed(productPriceLenovo, newQuantityLenovo, giftWrapping, shipping, tax));
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Click to 'Confirm' button");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 26: Click to 'Confirm' button");
 		userCheckoutPage.clickToContinueButtonById("confirm-order-buttons-container","Confirm");
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Verify succesfully order process");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 27: Verify succesfully order process");
 		verifyTrue(userCheckoutPage.isSuccessfullyProcessMessageDisplayed());
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Get order number");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 28: Get order number");
 		orderNumber = userCheckoutPage.getOrderNumber();
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Click to 'Continue' button");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 29: Click to 'Continue' button");
 		userCheckoutPage.clickToContinueButton();
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Click to 'My Account' linktext");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 30: Click to 'My Account' linktext");
 		userMyAccountPage = userCheckoutPage.openMyAccountPage(driver);
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Click to 'Order' linktext");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 31: Click to 'Order' linktext");
 		userOrderPage = userMyAccountPage.openOrderPage(driver);
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Compare order number is display");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 32: Compare order number is display");
 		verifyTrue(userOrderPage.verifyOrderNumber().contains(orderNumber));
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Click to 'detail' button");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 33: Click to 'detail' button");
 		userOrderPage.clickToDetailButton();
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Verify order number");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 34: Verify order number");
 		verifyTrue(userOrderPage.verifyOrderNumberOnOrderInformation().contains(orderNumber));
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Verify order date");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 35: Verify order date");
 		verifyTrue(userOrderPage.verifyOrderDateOnOrderInformation());
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Verify order status");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 36: Verify order status");
 		verifyTrue(userOrderPage.verifyOrderStatusOnOrderInformation().contains("Pending"));
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Verify order total");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 37: Verify order total");
 		verifyTrue(userOrderPage.verifyOrderTotalOnOrderInformation(productPriceLenovo, newQuantityLenovo, giftWrapping, shipping, tax));
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Verify Billing Address Info");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 38: Verify Billing Address Info");
 		verifyTrue(userOrderPage.verifyBillingAddInfoByClass("name", firstName));
 		verifyTrue(userOrderPage.verifyBillingAddInfoByClass("name", lastName));
 		verifyTrue(userOrderPage.verifyBillingAddInfoByClass("email", emailAddress));
@@ -350,11 +359,11 @@ public class User_Order extends BaseTest {
 		verifyTrue(userOrderPage.verifyBillingAddInfoByClass("city-state-zip", zipCode));
 		verifyTrue(userOrderPage.verifyBillingAddInfoByClass("country", country));
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Verify Payment Info");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 39: Verify Payment Info");
 		verifyTrue(userOrderPage.verifyPaymentMethodInfoByClass("payment-method", "Money Order"));
 		verifyTrue(userOrderPage.verifyPaymentMethodInfoByClass("payment-method-status", "Pending"));
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Verify Shipping Address Info");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 40: Verify Shipping Address Info");
 		verifyTrue(userOrderPage.verifyShippingAddInfoByClass("name", firstName));
 		verifyTrue(userOrderPage.verifyShippingAddInfoByClass("name", lastName));
 		verifyTrue(userOrderPage.verifyShippingAddInfoByClass("email", emailAddress));
@@ -363,41 +372,425 @@ public class User_Order extends BaseTest {
 		verifyTrue(userOrderPage.verifyShippingAddInfoByClass("city-state-zip", zipCode));
 		verifyTrue(userOrderPage.verifyShippingAddInfoByClass("country", country));
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Verify Shipping Method Info");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 41: Verify Shipping Method Info");
 		verifyTrue(userOrderPage.verifyShippingInfoByClass("shipping-method", "Next Day Air"));
 		verifyTrue(userOrderPage.verifyShippingInfoByClass("shipping-status", "Not yet shipped"));
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Verify Product Info");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 42: Verify Product Info");
 		verifyTrue(userOrderPage.isImageDisplayed());
 		verifyTrue(userOrderPage.isProductNameAddedOnWishlistPage(productNameLenovo));
 		verifyTrue(userOrderPage.isProductPriceAddedOnWishlistPage(productPriceLenovo));
 		verifyTrue(userOrderPage.isProductQuantityAddedOnWishlistPage(newQuantityLenovo));
 		verifyTrue(userOrderPage.isTotalFieldUpdated(productPriceLenovo, newQuantityLenovo));
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Verify Gift wrapping Info");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 43: Verify Gift wrapping Info");
 		verifyTrue(userOrderPage.isGiftWrappingDisplayed());
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Verify Sub-Total Info");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 44: Verify Sub-Total Info");
 		verifyTrue(userOrderPage.verifySubCartTotalIsDisplayed("Sub-Total",productPriceLenovo, newQuantityLenovo, giftWrapping));
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Verify Shipping Info");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 45: Verify Shipping Info");
 		verifyTrue(userOrderPage.verifyCartTotalIsDisplayedByClassName("Shipping", shipping));
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Verify Tax Info");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 46: Verify Tax Info");
 		verifyTrue(userOrderPage.verifyCartTotalIsDisplayedByClassName("Tax", tax));
 		
-		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Verify Order Total Info");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 47: Verify Order Total Info");
 		verifyTrue(userOrderPage.verifyCartTotalIsDisplayed("Order Total", productPriceLenovo, newQuantityLenovo, giftWrapping, shipping, tax));
 	}
 
 	@Test
-	public void TC_06_Checkout_By_Cart() {
+	public void TC_06_Checkout_By_Cart(Method method) {
+		ExtentTestManager.startTest(method.getName(), "TC_06_Checkout_By_Cart");
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cart - Step 01: Input product name to search textbox by value: " + productNameLenovo);
+		userOrderPage.inputKeywordToSearchTextbox(driver, productNameLenovo);
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cart - Step 02: Click to 'search' button ");
+		userSearchKeywordPage = userOrderPage.clickToSearchButton();
 
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cart - Step 03: Click to 'Add to cart' button ");
+		userSearchKeywordPage.clickAddToCartButton();
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cart - Step 04: Click to close icon");
+		userSearchKeywordPage.clickToCloseIcon();
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cart - Step 05: Go to Shopping Cart by click to Shopping cart linktext");
+		userShoppingCartPage = userSearchKeywordPage.clickToShoppingCartLinktext();
+		productPriceLenovo = userShoppingCartPage.getProductPriceOnShoppingCartTable();
+
+		ExtentTestManager.getTest().log(Status.INFO, "Update_Shopping_Cart - Step 06: Update quatity with value: " + newQuantityLenovo);
+		userShoppingCartPage.inputProductQuantityToQtyTextbox(newQuantityLenovo);
+
+		ExtentTestManager.getTest().log(Status.INFO, "Update_Shopping_Cart - Step 07: Click to 'Update shopping cart' button");
+		userShoppingCartPage.clickToUpdateShoppingCartButton();
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 08: Select 'Gift Wrapping' with value: " + giftWrapping);
+		userShoppingCartPage.selectGiftWrapping(giftWrapping);
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 09: Verify updated info of gift wapping");
+		verifyTrue(userShoppingCartPage.isGiftWrappingDisplayed());
+
+		ExtentTestManager.getTest().log(Status.INFO, 
+				"Checkout_By_Cheque - Step 07: Click to 'I agree with the terms of service and I adhere to them unconditionally' checkbox");
+		userShoppingCartPage.clickToAgreeTermCheckbox();
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 10: Click to 'Checkout' button");
+		userCheckoutPage = userShoppingCartPage.clickToCheckoutButton();
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 11: Click to 'Continue' button");
+		userCheckoutPage.clickToContinueButtonById("billing-buttons-container","Continue");
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 12: Click to 'Next day air' checkbox");
+		userCheckoutPage.clickToNextDayAirCheckbox();
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 13: Click to 'Continue' button");
+		userCheckoutPage.clickToContinueButtonById("shipping-method-buttons-container","Continue");
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 14: Click to 'Check/Money Order' checkbox");
+		
+		userCheckoutPage.clickToCreditCardCheckbox();
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 15: Click to 'Continue' button");
+		userCheckoutPage.clickToContinueButtonById("payment-method-buttons-container","Continue");
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 16: Select credit card dropdown list");
+		userCheckoutPage.selectCreditCardDropdownList(cardType);
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 17: Input card holder name");
+		userCheckoutPage.inputCardHolderName(cardHolderName);
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 18: Input card number");
+		userCheckoutPage.inputCardNumber(cardNumber);
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 19: Select expiration date - month");
+		userCheckoutPage.selectExpirationDateById("ExpireMonth", expirationMonth);
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 20: Select expiration date - year");
+		userCheckoutPage.selectExpirationDateById("ExpireYear", expirationYear);
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 21: Input card code");
+		userCheckoutPage.inputCardCode(cardCode);
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 22: Click to 'Continue' button");
+		userCheckoutPage.clickToContinueButtonById("payment-info-buttons-container","Continue");
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 23: Verify Billing Address Info");
+		verifyTrue(userCheckoutPage.isBillingAddressInfoDisplayByCategory("name", firstName));
+		verifyTrue(userCheckoutPage.isBillingAddressInfoDisplayByCategory("name", lastName));
+		verifyTrue(userCheckoutPage.isBillingAddressInfoDisplayByCategory("email", emailAddress));
+		verifyTrue(userCheckoutPage.isBillingAddressInfoDisplayByCategory("phone", phoneNumber));
+		verifyTrue(userCheckoutPage.isBillingAddressInfoDisplayByCategory("address1", address1));
+		verifyTrue(userCheckoutPage.isBillingAddressInfoDisplayByCategory("city-state-zip", city));
+		verifyTrue(userCheckoutPage.isBillingAddressInfoDisplayByCategory("city-state-zip", state));
+		verifyTrue(userCheckoutPage.isBillingAddressInfoDisplayByCategory("country", country));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 24: Verify Payment Info");
+		verifyTrue(userCheckoutPage.isPaymentOrShippingMethodInfoOnCheckoutPageDisplayed("payment-method").contains("Credit Card"));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 25: Verify Shipping Address Info");
+		verifyTrue(userCheckoutPage.isPaymentInfoDisplayByCategory("name", firstName));
+		verifyTrue(userCheckoutPage.isPaymentInfoDisplayByCategory("name", lastName));
+		verifyTrue(userCheckoutPage.isPaymentInfoDisplayByCategory("email", emailAddress));
+		verifyTrue(userCheckoutPage.isPaymentInfoDisplayByCategory("phone", phoneNumber));
+		verifyTrue(userCheckoutPage.isPaymentInfoDisplayByCategory("address1", address1));
+		verifyTrue(userCheckoutPage.isPaymentInfoDisplayByCategory("city-state-zip", city));
+		verifyTrue(userCheckoutPage.isPaymentInfoDisplayByCategory("city-state-zip", state));
+		verifyTrue(userCheckoutPage.isPaymentInfoDisplayByCategory("country", country));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 26: Verify Shipping Method Info");
+		verifyTrue(userCheckoutPage.isPaymentOrShippingMethodInfoOnCheckoutPageDisplayed("shipping-method").contains("Next Day Air"));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 27: Verify Product Info");
+		verifyTrue(userCheckoutPage.isImageDisplayed());
+		verifyTrue(userCheckoutPage.isProductNameAddedOnWishlistPage(productNameLenovo));
+		verifyTrue(userCheckoutPage.isProductPriceAddedOnWishlistPage(productPriceLenovo));
+		verifyTrue(userCheckoutPage.isProductQuantityAddedOnWishlistPage(newQuantityLenovo));
+		verifyTrue(userCheckoutPage.isTotalFieldUpdated(productPriceLenovo, newQuantityLenovo));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 28: Verify Cart Total Info");
+		verifyTrue(userCheckoutPage.verifySubCartTotalIsDisplayed(productPriceLenovo, newQuantityLenovo, giftWrapping));
+		verifyTrue(userCheckoutPage.verifyCartTotalIsDisplayedByClassName("shipping-cost", shipping));
+		verifyTrue(userCheckoutPage.verifyCartTotalIsDisplayedByClassName("tax-value", tax));
+		verifyTrue(userCheckoutPage.verifyCartTotalIsDisplayed(productPriceLenovo, newQuantityLenovo, giftWrapping, shipping, tax));
+		verifyTrue(userCheckoutPage.verifyPointIsDisplayed(productPriceLenovo, newQuantityLenovo, giftWrapping, shipping, tax));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 29: Click to 'Confirm' button");
+		userCheckoutPage.clickToContinueButtonById("confirm-order-buttons-container","Confirm");
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 30: Verify succesfully order process");
+		verifyTrue(userCheckoutPage.isSuccessfullyProcessMessageDisplayed());
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 31: Get order number");
+		orderNumber = userCheckoutPage.getOrderNumber();
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 32: Click to 'Continue' button");
+		userCheckoutPage.clickToContinueButton();
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 33: Click to 'My Account' linktext");
+		userMyAccountPage = userCheckoutPage.openMyAccountPage(driver);
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 34: Click to 'Order' linktext");
+		userOrderPage = userMyAccountPage.openOrderPage(driver);
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 35: Compare order number is display");
+		verifyTrue(userOrderPage.verifyOrderNumber().contains(orderNumber));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 36: Click to 'detail' button");
+		userOrderPage.clickToDetailButton();
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 37: Verify order number");
+		verifyTrue(userOrderPage.verifyOrderNumberOnOrderInformation().contains(orderNumber));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 38: Verify order date");
+		verifyTrue(userOrderPage.verifyOrderDateOnOrderInformation());
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 39: Verify order status");
+		verifyTrue(userOrderPage.verifyOrderStatusOnOrderInformation().contains("Pending"));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 40: Verify order total");
+		verifyTrue(userOrderPage.verifyOrderTotalOnOrderInformation(productPriceLenovo, newQuantityLenovo, giftWrapping, shipping, tax));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 41: Verify Billing Address Info");
+		verifyTrue(userOrderPage.verifyBillingAddInfoByClass("name", firstName));
+		verifyTrue(userOrderPage.verifyBillingAddInfoByClass("name", lastName));
+		verifyTrue(userOrderPage.verifyBillingAddInfoByClass("email", emailAddress));
+		verifyTrue(userOrderPage.verifyBillingAddInfoByClass("phone", phoneNumber));
+		verifyTrue(userOrderPage.verifyBillingAddInfoByClass("address1", address1));
+		verifyTrue(userOrderPage.verifyBillingAddInfoByClass("city-state-zip", zipCode));
+		verifyTrue(userOrderPage.verifyBillingAddInfoByClass("country", country));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 42: Verify Payment Info");
+		verifyTrue(userOrderPage.verifyPaymentMethodInfoByClass("payment-method", "Credit Card"));
+		verifyTrue(userOrderPage.verifyPaymentMethodInfoByClass("payment-method-status", "Pending"));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 42: Verify Shipping Address Info");
+		verifyTrue(userOrderPage.verifyShippingAddInfoByClass("name", firstName));
+		verifyTrue(userOrderPage.verifyShippingAddInfoByClass("name", lastName));
+		verifyTrue(userOrderPage.verifyShippingAddInfoByClass("email", emailAddress));
+		verifyTrue(userOrderPage.verifyShippingAddInfoByClass("phone", phoneNumber));
+		verifyTrue(userOrderPage.verifyShippingAddInfoByClass("address1", address1));
+		verifyTrue(userOrderPage.verifyShippingAddInfoByClass("city-state-zip", zipCode));
+		verifyTrue(userOrderPage.verifyShippingAddInfoByClass("country", country));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 44: Verify Shipping Method Info");
+		verifyTrue(userOrderPage.verifyShippingInfoByClass("shipping-method", "Next Day Air"));
+		verifyTrue(userOrderPage.verifyShippingInfoByClass("shipping-status", "Not yet shipped"));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 45: Verify Product Info");
+		verifyTrue(userOrderPage.isImageDisplayed());
+		verifyTrue(userOrderPage.isProductNameAddedOnWishlistPage(productNameLenovo));
+		verifyTrue(userOrderPage.isProductPriceAddedOnWishlistPage(productPriceLenovo));
+		verifyTrue(userOrderPage.isProductQuantityAddedOnWishlistPage(newQuantityLenovo));
+		verifyTrue(userOrderPage.isTotalFieldUpdated(productPriceLenovo, newQuantityLenovo));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 46: Verify Gift wrapping Info");
+		verifyTrue(userOrderPage.isGiftWrappingDisplayed());
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 47: Verify Sub-Total Info");
+		verifyTrue(userOrderPage.verifySubCartTotalIsDisplayed("Sub-Total", productPriceLenovo, newQuantityLenovo, giftWrapping));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 48: Verify Shipping Info");
+		verifyTrue(userOrderPage.verifyCartTotalIsDisplayedByClassName("Shipping", shipping));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 49: Verify Tax Info");
+		verifyTrue(userOrderPage.verifyCartTotalIsDisplayedByClassName("Tax", tax));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Checkout_By_Cheque - Step 50: Verify Order Total Info");
+		verifyTrue(userOrderPage.verifyCartTotalIsDisplayed("Order Total", productPriceLenovo, newQuantityLenovo, giftWrapping, shipping, tax));
 	}
 
 	@Test
-	public void TC_07_Re_Order() {
+	public void TC_07_Re_Order(Method method) {
+		ExtentTestManager.startTest(method.getName(), "TC_07_Re_Order");
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 01: Click to 'My Account' linktext");
+		userMyAccountPage = userOrderPage.openMyAccountPage(driver);
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 02: Click to 'Order' linktext");
+		userOrderPage = userMyAccountPage.openOrderPage(driver);
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 03: Click to 'detail' button");
+		userOrderPage.clickToDetailButton();
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 04: Click to 're-order' button");
+		
+		userShoppingCartPage = userOrderPage.clickToReOderButton();
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 06: Update quatity with value: " + newQuantityLenovo);
+		userShoppingCartPage.inputProductQuantityToQtyTextbox(updateNewReOrderQuantity);
 
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 07: Click to 'Update shopping cart' button");
+		userShoppingCartPage.clickToUpdateShoppingCartButton();
+
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 08: Verify total is updated");
+		verifyTrue(userShoppingCartPage.isTotalFieldUpdated(productPriceLenovo, updateNewReOrderQuantity));
+		
+		ExtentTestManager.getTest().log(Status.INFO, 
+				"Re_Order - Step 09: Click to 'I agree with the terms of service and I adhere to them unconditionally' checkbox");
+		userShoppingCartPage.clickToAgreeTermCheckbox();
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 10: Click to 'Checkout' button");
+		userCheckoutPage = userShoppingCartPage.clickToCheckoutButton();
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 11: Click to 'Continue' button");
+		userCheckoutPage.clickToContinueButtonById("billing-buttons-container","Continue");
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 12: Click to 'Next day air' checkbox");
+		userCheckoutPage.clickToNextDayAirCheckbox();
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 13: Click to 'Continue' button");
+		userCheckoutPage.clickToContinueButtonById("shipping-method-buttons-container","Continue");
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 14: Click to 'Check/Money Order' checkbox");
+		
+		userCheckoutPage.clickToCreditCardCheckbox();
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 15: Click to 'Continue' button");
+		userCheckoutPage.clickToContinueButtonById("payment-method-buttons-container","Continue");
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 16: Select credit card dropdown list");
+		userCheckoutPage.selectCreditCardDropdownList(cardType);
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 17: Input card holder name");
+		userCheckoutPage.inputCardHolderName(cardHolderName);
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 18: Input card number");
+		userCheckoutPage.inputCardNumber(cardNumber);
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 19: Select expiration date - month");
+		userCheckoutPage.selectExpirationDateById("ExpireMonth", expirationMonth);
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 20: Select expiration date - year");
+		userCheckoutPage.selectExpirationDateById("ExpireYear", expirationYear);
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 21: Input card code");
+		userCheckoutPage.inputCardCode(cardCode);
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 22: Click to 'Continue' button");
+		userCheckoutPage.clickToContinueButtonById("payment-info-buttons-container","Continue");
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 23: Verify Billing Address Info");
+		verifyTrue(userCheckoutPage.isBillingAddressInfoDisplayByCategory("name", firstName));
+		verifyTrue(userCheckoutPage.isBillingAddressInfoDisplayByCategory("name", lastName));
+		verifyTrue(userCheckoutPage.isBillingAddressInfoDisplayByCategory("email", emailAddress));
+		verifyTrue(userCheckoutPage.isBillingAddressInfoDisplayByCategory("phone", phoneNumber));
+		verifyTrue(userCheckoutPage.isBillingAddressInfoDisplayByCategory("address1", address1));
+		verifyTrue(userCheckoutPage.isBillingAddressInfoDisplayByCategory("city-state-zip", city));
+		verifyTrue(userCheckoutPage.isBillingAddressInfoDisplayByCategory("city-state-zip", state));
+		verifyTrue(userCheckoutPage.isBillingAddressInfoDisplayByCategory("country", country));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 24: Verify Payment Info");
+		verifyTrue(userCheckoutPage.isPaymentOrShippingMethodInfoOnCheckoutPageDisplayed("payment-method").contains("Credit Card"));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 25: Verify Shipping Address Info");
+		verifyTrue(userCheckoutPage.isPaymentInfoDisplayByCategory("name", firstName));
+		verifyTrue(userCheckoutPage.isPaymentInfoDisplayByCategory("name", lastName));
+		verifyTrue(userCheckoutPage.isPaymentInfoDisplayByCategory("email", emailAddress));
+		verifyTrue(userCheckoutPage.isPaymentInfoDisplayByCategory("phone", phoneNumber));
+		verifyTrue(userCheckoutPage.isPaymentInfoDisplayByCategory("address1", address1));
+		verifyTrue(userCheckoutPage.isPaymentInfoDisplayByCategory("city-state-zip", city));
+		verifyTrue(userCheckoutPage.isPaymentInfoDisplayByCategory("city-state-zip", state));
+		verifyTrue(userCheckoutPage.isPaymentInfoDisplayByCategory("country", country));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 26: Verify Shipping Method Info");
+		verifyTrue(userCheckoutPage.isPaymentOrShippingMethodInfoOnCheckoutPageDisplayed("shipping-method").contains("Next Day Air"));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 27: Verify Product Info");
+		verifyTrue(userCheckoutPage.isImageDisplayed());
+		verifyTrue(userCheckoutPage.isProductNameAddedOnWishlistPage(productNameLenovo));
+		verifyTrue(userCheckoutPage.isProductPriceAddedOnWishlistPage(productPriceLenovo));
+		verifyTrue(userCheckoutPage.isProductQuantityAddedOnWishlistPage(updateNewReOrderQuantity));
+		verifyTrue(userCheckoutPage.isTotalFieldUpdated(productPriceLenovo, updateNewReOrderQuantity));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 28: Verify Cart Total Info");
+		verifyTrue(userCheckoutPage.verifySubCartTotalIsDisplayed(productPriceLenovo, newQuantityLenovo, giftWrapping));
+		verifyTrue(userCheckoutPage.verifyCartTotalIsDisplayedByClassName("shipping-cost", shipping));
+		verifyTrue(userCheckoutPage.verifyCartTotalIsDisplayedByClassName("tax-value", tax));
+		verifyTrue(userCheckoutPage.verifyCartTotalIsDisplayed(productPriceLenovo, updateNewReOrderQuantity, giftWrapping, shipping, tax));
+		verifyTrue(userCheckoutPage.verifyPointIsDisplayed(productPriceLenovo, updateNewReOrderQuantity, giftWrapping, shipping, tax));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 29: Click to 'Confirm' button");
+		userCheckoutPage.clickToContinueButtonById("confirm-order-buttons-container","Confirm");
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 30: Verify succesfully order process");
+		verifyTrue(userCheckoutPage.isSuccessfullyProcessMessageDisplayed());
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 31: Get order number");
+		orderNumber = userCheckoutPage.getOrderNumber();
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 32: Click to 'Continue' button");
+		userCheckoutPage.clickToContinueButton();
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 33: Click to 'My Account' linktext");
+		userMyAccountPage = userCheckoutPage.openMyAccountPage(driver);
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 34: Click to 'Order' linktext");
+		userOrderPage = userMyAccountPage.openOrderPage(driver);
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 35: Compare order number is display");
+		verifyTrue(userOrderPage.verifyOrderNumber().contains(orderNumber));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 36: Click to 'detail' button");
+		userOrderPage.clickToDetailButton();
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 37: Verify order number");
+		verifyTrue(userOrderPage.verifyOrderNumberOnOrderInformation().contains(orderNumber));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 38: Verify order date");
+		verifyTrue(userOrderPage.verifyOrderDateOnOrderInformation());
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 39: Verify order status");
+		verifyTrue(userOrderPage.verifyOrderStatusOnOrderInformation().contains("Pending"));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 40: Verify order total");
+		verifyTrue(userOrderPage.verifyOrderTotalOnOrderInformation(productPriceLenovo, updateNewReOrderQuantity, giftWrapping, shipping, tax));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 41: Verify Billing Address Info");
+		verifyTrue(userOrderPage.verifyBillingAddInfoByClass("name", firstName));
+		verifyTrue(userOrderPage.verifyBillingAddInfoByClass("name", lastName));
+		verifyTrue(userOrderPage.verifyBillingAddInfoByClass("email", emailAddress));
+		verifyTrue(userOrderPage.verifyBillingAddInfoByClass("phone", phoneNumber));
+		verifyTrue(userOrderPage.verifyBillingAddInfoByClass("address1", address1));
+		verifyTrue(userOrderPage.verifyBillingAddInfoByClass("city-state-zip", zipCode));
+		verifyTrue(userOrderPage.verifyBillingAddInfoByClass("country", country));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 42: Verify Payment Info");
+		verifyTrue(userOrderPage.verifyPaymentMethodInfoByClass("payment-method", "Credit Card"));
+		verifyTrue(userOrderPage.verifyPaymentMethodInfoByClass("payment-method-status", "Pending"));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 43: Verify Shipping Address Info");
+		verifyTrue(userOrderPage.verifyShippingAddInfoByClass("name", firstName));
+		verifyTrue(userOrderPage.verifyShippingAddInfoByClass("name", lastName));
+		verifyTrue(userOrderPage.verifyShippingAddInfoByClass("email", emailAddress));
+		verifyTrue(userOrderPage.verifyShippingAddInfoByClass("phone", phoneNumber));
+		verifyTrue(userOrderPage.verifyShippingAddInfoByClass("address1", address1));
+		verifyTrue(userOrderPage.verifyShippingAddInfoByClass("city-state-zip", zipCode));
+		verifyTrue(userOrderPage.verifyShippingAddInfoByClass("country", country));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 44: Verify Shipping Method Info");
+		verifyTrue(userOrderPage.verifyShippingInfoByClass("shipping-method", "Next Day Air"));
+		verifyTrue(userOrderPage.verifyShippingInfoByClass("shipping-status", "Not yet shipped"));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 45: Verify Product Info");
+		verifyTrue(userOrderPage.isImageDisplayed());
+		verifyTrue(userOrderPage.isProductNameAddedOnWishlistPage(productNameLenovo));
+		verifyTrue(userOrderPage.isProductPriceAddedOnWishlistPage(productPriceLenovo));
+		verifyTrue(userOrderPage.isProductQuantityAddedOnWishlistPage(updateNewReOrderQuantity));
+		verifyTrue(userOrderPage.isTotalFieldUpdated(productPriceLenovo, updateNewReOrderQuantity));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 46: Verify Gift wrapping Info");
+		verifyTrue(userOrderPage.isGiftWrappingDisplayed());
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 47: Verify Sub-Total Info");
+		verifyTrue(userOrderPage.verifySubCartTotalIsDisplayed("Sub-Total", productPriceLenovo, updateNewReOrderQuantity, giftWrapping));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 48: Verify Shipping Info");
+		verifyTrue(userOrderPage.verifyCartTotalIsDisplayedByClassName("Shipping", shipping));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 49: Verify Tax Info");
+		verifyTrue(userOrderPage.verifyCartTotalIsDisplayedByClassName("Tax", tax));
+		
+		ExtentTestManager.getTest().log(Status.INFO, "Re_Order - Step 50: Verify Order Total Info");
+		verifyTrue(userOrderPage.verifyCartTotalIsDisplayed("Order Total", productPriceLenovo, updateNewReOrderQuantity, giftWrapping, shipping, tax));
 	}
 
 	@AfterClass(alwaysRun = true)

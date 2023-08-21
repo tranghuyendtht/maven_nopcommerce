@@ -17,6 +17,7 @@ public class UserCheckoutPageObject extends BasePage{
 		this.driver = driver;
 	}
 	public void inputToTextboxById(String idTextbox, String textValue) {
+		sleepInSecond(1);
 		waitForElementVisible(driver, UserCheckoutPageUI.TEXTBOX_BY_ID, idTextbox);
 		sendkeyToElement(driver, UserCheckoutPageUI.TEXTBOX_BY_ID, textValue, idTextbox);
 		
@@ -41,6 +42,11 @@ public class UserCheckoutPageObject extends BasePage{
 	public void clickToCheckMoneyOrderCheckbox() {
 		waitForElementClickable(driver, UserCheckoutPageUI.CHECK_MONEY_ORDER_CHECKBOX);
 		clickToElement(driver, UserCheckoutPageUI.CHECK_MONEY_ORDER_CHECKBOX);
+		
+	}
+	public void clickToCreditCardCheckbox() {
+		waitForElementClickable(driver, UserCheckoutPageUI.CREDIT_CARD_CHECKBOX);
+		clickToElement(driver, UserCheckoutPageUI.CREDIT_CARD_CHECKBOX);
 		
 	}
 	
@@ -259,6 +265,31 @@ public class UserCheckoutPageObject extends BasePage{
 	public void clickToContinueButton() {
 		waitForElementClickable(driver, UserCheckoutPageUI.CONTINUE_BUTTON_COMPLETE);
 		clickToElement(driver, UserCheckoutPageUI.CONTINUE_BUTTON_COMPLETE);
+		
+	}
+	
+	public void selectCreditCardDropdownList(String cardType) {
+		waitForElementVisible(driver, UserCheckoutPageUI.CREDIT_CARD_DROPDOWN_LIST);
+		selectItemInDefaultDropDown(driver, UserCheckoutPageUI.CREDIT_CARD_DROPDOWN_LIST, cardType);
+	}
+	public void inputCardHolderName(String cardHolderName) {
+		waitForElementVisible(driver, UserCheckoutPageUI.CARD_HOLDER_NAME_TEXTBOX);
+		sendkeyToElement(driver, UserCheckoutPageUI.CARD_HOLDER_NAME_TEXTBOX, cardHolderName);
+	}
+	
+	public void inputCardNumber(String cardNumber) {
+		waitForElementVisible(driver, UserCheckoutPageUI.CARD_NUMBER_TEXTBOX);
+		sendkeyToElement(driver, UserCheckoutPageUI.CARD_NUMBER_TEXTBOX, cardNumber);
+		
+	}
+	public void selectExpirationDateById(String id, String expirationMonth) {
+		waitForElementVisible(driver, UserCheckoutPageUI.EXPIRATION_DATE_BY_ID, id);
+		selectItemInDefaultDropDown(driver, UserCheckoutPageUI.EXPIRATION_DATE_BY_ID, expirationMonth, id);
+		
+	}
+	public void inputCardCode(String cardCode) {
+		waitForElementVisible(driver, UserCheckoutPageUI.CARD_CODE_TEXTBOX);
+		sendkeyToElement(driver, UserCheckoutPageUI.CARD_CODE_TEXTBOX, cardCode);
 		
 	}
 

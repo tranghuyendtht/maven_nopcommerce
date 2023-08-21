@@ -10,7 +10,9 @@ import org.openqa.selenium.WebElement;
 
 import PageUIs.nopcommerce.user.UserCheckoutPageUI;
 import PageUIs.nopcommerce.user.UserOrderPageUI;
+import PageUIs.nopcommerce.user.UserShoppingCartPageUI;
 import commons.BasePage;
+import commons.PageGeneratorManager;
 
 public class UserOrderPageObject extends BasePage{
 private WebDriver driver;
@@ -271,5 +273,19 @@ private WebDriver driver;
 			 pass = false;
 		}
 		return pass;
+	}
+
+
+	public UserSearchKeywordPageObject clickToSearchButton() {
+		waitForElementClickable(driver, UserOrderPageUI.SEARCH_BUTTON);
+		clickToElement(driver, UserOrderPageUI.SEARCH_BUTTON);
+		return PageGeneratorManager.getUserSearchKeywordPage(driver);
+	}
+
+
+	public UserShoppingCartPageObject clickToReOderButton() {
+		waitForElementClickable(driver, UserOrderPageUI.RE_ORDER_BUTTON);
+		clickToElement(driver, UserOrderPageUI.RE_ORDER_BUTTON);
+		return PageGeneratorManager.getUserShoppingCartPage(driver);
 	}
 }
