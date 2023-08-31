@@ -2,17 +2,27 @@ package commons;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Iterator;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import org.aeonbits.owner.Config;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxBinary;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.BeforeSuite;
+
+import com.github.javafaker.Options;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -99,6 +109,50 @@ public class BaseTest {
 		driver.get(appUrl);
 
 		return driver;
+	}
+	
+	protected WebDriver getBrowserSeleniumGrid(String browserName, String appUrl,  String osName, String ipAddress, String portNumber) {
+		DesiredCapabilities capability = null;
+		Platform platform = null;
+
+		if (osName.contains("windows")) {
+			platform = Platform.WINDOWS;
+		} else {
+			platform = Platform.MAC;
+		}
+
+		switch (browserName) {
+			case "firefox" :
+				FirefoxOptions fOptions = new FirefoxOptions();
+				capability = DesiredCapabilities.firefox();
+				capability.setBrowserName("firefox");
+				capability.setPlatform(platform);
+				fOptions.merge(capability);
+				
+				break;
+			case "chrome" :
+				capability = DesiredCapabilities.chrome();
+				capability.setBrowserName("chrome");
+				capability.setPlatform(platform);
+
+				ChromeOptions cOptions = new ChromeOptions();
+				cOptions.merge(capability);
+				break;
+			default :
+				throw new RuntimeException("Browser is not valid!");
+		}
+
+		try {
+			
+			driver = new RemoteWebDriver(new URL(String.format("http://%s:%s/wd/hub", ipAddress, portNumber)), capability);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.get(appUrl);
+
+		return driver;
+
 	}
 
 	protected boolean verifyTrue(boolean condition) {

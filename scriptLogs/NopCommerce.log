@@ -1728,3 +1728,145 @@
 [2023-08-21 17:21:08,218]  -------------------------- PASSED -------------------------- 
 [2023-08-21 17:21:08,220] OS name = windows 10
 [2023-08-21 17:21:08,220] Driver instance name = firefoxdriver: firefox on windows (0e22f0ff-d3d3-4270-b2b2-7813bc60bb82)
+[2023-08-23 11:10:54,239] Pre-Condition: Go to page
+[2023-08-23 11:15:57,102] Pre-Condition: Go to page
+[2023-08-23 11:41:33,971] Pre-Condition: Go to page
+[2023-08-23 11:41:34,004] Run on FIREFOX
+[2023-08-23 11:41:38,019] Pre-Condition: Navigate to Login page
+[2023-08-23 11:41:39,017] Pre-Condition: Set cookies and reload page
+[2023-08-23 11:47:11,967] Pre-Condition: Go to page
+[2023-08-23 14:59:11,978] Pre-Condition: Go to page
+[2023-08-23 16:22:35,839] OS name = windows 10
+[2023-08-23 16:22:35,856] Cannot invoke "Object.toString()" because "this.driver" is null
+[2023-08-23 16:22:35,905] OS name = windows 10
+[2023-08-23 16:22:35,905] Cannot invoke "Object.toString()" because "this.driver" is null
+[2023-08-23 16:22:35,960] OS name = windows 10
+[2023-08-23 16:22:35,960] Cannot invoke "Object.toString()" because "this.driver" is null
+[2023-08-23 16:22:36,051] OS name = windows 10
+[2023-08-23 16:22:36,052] Cannot invoke "Object.toString()" because "this.driver" is null
+[2023-08-23 16:22:36,110] OS name = windows 10
+[2023-08-23 16:22:36,111] Cannot invoke "Object.toString()" because "this.driver" is null
+[2023-08-23 16:22:36,356] OS name = windows 10
+[2023-08-23 16:22:36,356] Cannot invoke "Object.toString()" because "this.driver" is null
+[2023-08-23 16:22:36,370] OS name = windows 10
+[2023-08-23 16:22:36,370] Cannot invoke "Object.toString()" because "this.driver" is null
+[2023-08-23 16:22:36,453] OS name = windows 10
+[2023-08-23 16:22:36,453] Cannot invoke "Object.toString()" because "this.driver" is null
+[2023-08-23 16:22:36,522] OS name = windows 10
+[2023-08-23 16:22:36,522] Cannot invoke "Object.toString()" because "this.driver" is null
+[2023-08-23 16:22:36,539] OS name = windows 10
+[2023-08-23 16:22:36,539] Cannot invoke "Object.toString()" because "this.driver" is null
+[2023-08-23 16:22:36,576] OS name = windows 10
+[2023-08-23 16:22:36,576] Cannot invoke "Object.toString()" because "this.driver" is null
+[2023-08-23 16:22:36,599] OS name = windows 10
+[2023-08-23 16:22:36,599] Cannot invoke "Object.toString()" because "this.driver" is null
+[2023-08-23 16:22:36,601] OS name = windows 10
+[2023-08-23 16:22:36,602] Cannot invoke "Object.toString()" because "this.driver" is null
+[2023-08-23 16:24:20,694] Pre-Condition: Go to page
+[2023-08-23 16:24:21,780] Run on FIREFOX
+[2023-08-23 16:24:28,975] Pre-Condition: Navigate to Login page
+[2023-08-23 16:24:30,031] Pre-Condition: Set cookies and reload page
+[2023-08-23 16:44:16,127] Pre-Condition: Go to page
+[2023-08-23 16:48:06,786] Pre-Condition: Go to page
+[2023-08-23 16:49:44,159] Pre-Condition: Go to page
+[2023-08-23 16:49:49,441] Pre-Condition: Navigate to Login page
+[2023-08-23 16:49:50,543] Pre-Condition: Set cookies and reload page
+[2023-08-23 16:52:06,301] Pre-Condition: Go to page
+[2023-08-23 16:54:52,903] Pre-Condition: Go to page
+[2023-08-23 16:59:55,871] Pre-Condition: Go to page
+[2023-08-23 17:03:05,391] Pre-Condition: Go to page
+[2023-08-23 17:06:39,817] Pre-Condition: Go to page
+[2023-08-23 17:06:43,836] Pre-Condition: Navigate to Login page
+[2023-08-23 17:06:44,914] Pre-Condition: Set cookies and reload page
+[2023-08-23 17:09:12,176] Pre-Condition: Go to page
+[2023-08-24 14:45:15,337] Pre-Condition: Go to page
+[2023-08-24 14:47:40,762] Pre-Condition: Go to page
+[2023-08-24 14:49:42,030] Pre-Condition: Go to page
+[2023-08-24 14:56:56,636] Pre-Condition: Go to page
+[2023-08-24 15:00:03,494] Pre-Condition: Go to page
+[2023-08-24 15:00:08,637] Pre-Condition: Navigate to Login page
+[2023-08-24 15:00:09,740] Pre-Condition: Set cookies and reload page
+[2023-08-24 15:00:46,638] Pre-Condition: Go to page
+[2023-08-24 15:02:47,327] Pre-Condition: Go to page
+[2023-08-24 15:11:31,116] Pre-Condition: Go to page
+[2023-08-24 15:15:00,211] Pre-Condition: Go to page
+[2023-08-24 15:16:20,327] Pre-Condition: Go to page
+[2023-08-24 15:20:04,754] Pre-Condition: Go to page
+[2023-08-24 15:42:04,749] Pre-Condition: Go to page
+[2023-08-24 16:41:36,867] Pre-Condition: Go to page
+[2023-08-24 16:44:12,285] Pre-Condition: Go to page
+[2023-08-24 16:50:07,472] Pre-Condition: Go to page
+[2023-08-24 16:53:30,198] Pre-Condition: Go to page
+[2023-08-24 17:06:13,805] Pre-Condition: Go to page
+[2023-08-24 17:07:55,245] Pre-Condition: Go to page
+[2023-08-24 17:09:38,700] Pre-Condition: Go to page
+[2023-08-24 17:11:50,894] Pre-Condition: Go to page
+[2023-08-28 11:48:11,638] Pre-Condition: Go to page
+[2023-08-28 12:00:15,214] Pre-Condition: Go to page
+[2023-08-28 12:04:12,554] Pre-Condition: Go to page
+[2023-08-28 12:21:27,846] Pre-Condition: Go to page
+[2023-08-28 12:30:36,880] Pre-Condition: Go to page
+[2023-08-28 12:32:20,286] Pre-Condition: Go to page
+[2023-08-28 12:33:51,622] Pre-Condition: Go to page
+[2023-08-28 12:52:16,497] Pre-Condition: Go to page
+[2023-08-28 12:53:03,126] Pre-Condition: Go to page
+[2023-08-28 12:55:08,390] Pre-Condition: Go to page
+[2023-08-28 12:57:48,187] Pre-Condition: Go to page
+[2023-08-28 12:59:02,027] Pre-Condition: Go to page
+[2023-08-28 12:59:07,508] Pre-Condition: Navigate to Login page
+[2023-08-28 12:59:08,580] Pre-Condition: Set cookies and reload page
+[2023-08-28 12:59:33,230] Pre-Condition: Go to page
+[2023-08-28 13:00:06,142] Pre-Condition: Go to page
+[2023-08-28 13:01:49,582] Pre-Condition: Go to page
+[2023-08-28 13:03:49,972] Pre-Condition: Go to page
+[2023-08-28 14:38:35,241] Pre-Condition: Go to page
+[2023-08-28 14:41:47,333] Pre-Condition: Go to page
+[2023-08-28 14:47:26,962] Pre-Condition: Go to page
+[2023-08-28 14:54:07,658] Pre-Condition: Go to page
+[2023-08-28 15:04:16,551] Pre-Condition: Go to page
+[2023-08-28 15:07:01,969] Pre-Condition: Go to page
+[2023-08-28 15:53:36,730] Pre-Condition: Go to page
+[2023-08-28 16:17:58,115] Pre-Condition: Go to page
+[2023-08-28 16:29:06,892] Pre-Condition: Go to page
+[2023-08-28 16:31:18,155] Pre-Condition: Go to page
+[2023-08-28 16:33:16,384] Pre-Condition: Go to page
+[2023-08-28 16:35:12,426] Pre-Condition: Go to page
+[2023-08-28 16:37:03,024] Pre-Condition: Go to page
+[2023-08-28 16:51:13,181] Pre-Condition: Go to page
+[2023-08-28 16:56:24,679] Pre-Condition: Go to page
+[2023-08-28 16:57:38,077] Pre-Condition: Go to page
+[2023-08-28 16:58:31,723] Pre-Condition: Go to page
+[2023-08-29 12:20:20,082] Pre-Condition: Go to page
+[2023-08-29 16:27:35,504] Pre-Condition: Go to page
+[2023-08-29 16:47:12,217] Pre-Condition: Go to page
+[2023-08-29 16:51:17,291] Pre-Condition: Go to page
+[2023-08-29 16:57:21,561] Pre-Condition: Go to page
+[2023-08-29 17:03:28,548] Pre-Condition: Go to page
+[2023-08-29 17:07:29,804] Pre-Condition: Go to page
+[2023-08-29 17:08:37,342] Pre-Condition: Go to page
+[2023-08-29 17:18:42,584] Pre-Condition: Go to page
+[2023-08-29 17:24:37,682] Pre-Condition: Go to page
+[2023-08-29 17:28:12,709] Pre-Condition: Go to page
+[2023-08-29 17:35:48,072] Pre-Condition: Go to page
+[2023-08-31 10:51:07,211] Pre-Condition: Go to page
+[2023-08-31 10:51:07,211] Pre-Condition: Go to page
+[2023-08-31 10:54:57,354] Pre-Condition: Go to page
+[2023-08-31 11:01:08,948] Pre-Condition: Go to page
+[2023-08-31 11:08:00,551] Pre-Condition: Go to page
+[2023-08-31 11:10:06,532] Pre-Condition: Go to page
+[2023-08-31 11:11:48,081] Pre-Condition: Go to page
+[2023-08-31 11:52:24,784] Pre-Condition: Go to page
+[2023-08-31 12:15:34,598] Pre-Condition: Go to page
+[2023-08-31 14:40:37,142] Pre-Condition: Go to page
+[2023-08-31 14:44:39,873] Pre-Condition: Go to page
+[2023-08-31 14:50:05,579] Pre-Condition: Go to page
+[2023-08-31 14:52:04,157] Pre-Condition: Go to page
+[2023-08-31 15:04:55,534] Pre-Condition: Go to page
+[2023-08-31 15:13:13,281] Pre-Condition: Go to page
+[2023-08-31 15:13:18,739] Pre-Condition: Navigate to Login page
+[2023-08-31 15:13:19,852] Pre-Condition: Set cookies and reload page
+[2023-08-31 15:13:29,176]  -------------------------- PASSED -------------------------- 
+[2023-08-31 15:23:30,410] Pre-Condition: Go to page
+[2023-08-31 15:23:44,170] Pre-Condition: Navigate to Login page
+[2023-08-31 15:23:45,308] Pre-Condition: Set cookies and reload page
+[2023-08-31 15:23:55,439]  -------------------------- PASSED -------------------------- 

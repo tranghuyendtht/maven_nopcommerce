@@ -1,14 +1,451 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Nopcommerce]">
-  <listeners>
-    <listener class-name="commons.MethodListener"/>
-    <listener class-name="reportConfig.ReportNGListener"/>
-  </listeners>
-  <test thread-count="5" name="Run on FIREFOX(failed)">
-    <parameter name="browser" value="firefox"/>
-    <parameter name="url" value="https://demo.nopcommerce.com/"/>
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
+      <class name="com.nopcommerce.user.Level_06_My_Account_Page_Generator_Manager">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="initBeforeSuit"/>
+          <include name="Change_Password_003"/>
+          <include name="My_Product_Views_004_Create_New_Review"/>
+          <include name="afterClass"/>
+          <include name="Address_002_Add_Address"/>
+          <include name="Customer_Info_001_Update_Info"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_06_My_Account_Page_Generator_Manager -->
+      <class name="com.nopcommerce.user.Level_02_Login_Apply_BasePage_Inheritance">
+        <methods>
+          <include name="afterClass"/>
+          <include name="TC_04_Empty_Password"/>
+          <include name="TC_02_Login_Invalid_Email"/>
+          <include name="TC_01_Login_Empty_Data"/>
+          <include name="TC_03_Login_New_Email"/>
+          <include name="TC_06_Login_Success"/>
+          <include name="beforeClass"/>
+          <include name="TC_05_Login_Invalid_Password"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_02_Login_Apply_BasePage_Inheritance -->
+      <class name="com.nopcommerce.user.Level_15_ExtentReportV5_Screenshort">
+        <methods>
+          <include name="initBeforeSuit"/>
+          <include name="User_01_Register_Login"/>
+          <include name="afterClass"/>
+          <include name="User_02_Login"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_15_ExtentReportV5_Screenshort -->
+      <class name="com.nopcommerce.user.Level_08_Switch_Role">
+        <methods>
+          <include name="initBeforeSuit"/>
+          <include name="beforeClass"/>
+          <include name="Role_02_Admin_To_User"/>
+          <include name="Role_01_User_To_Admin"/>
+          <include name="afterClass"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_08_Switch_Role -->
+      <class name="com.nopcommerce.user.Level_18_Pattern_Object">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="initBeforeSuit"/>
+          <include name="User_02_Login"/>
+          <include name="afterClass"/>
+          <include name="User_01_Register_Login"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_18_Pattern_Object -->
+      <class name="com.nopcommerce.user.User_Register">
+        <methods>
+          <include name="TC_01_Register_Empty_Data"/>
+          <include name="initBeforeSuit"/>
+          <include name="beforeClass"/>
+          <include name="TC_03_Register_Success"/>
+          <include name="afterClass"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.User_Register -->
+      <class name="com.nopcommerce.user.Level_15_ExtentReportV2_Screenshort">
+        <methods>
+          <include name="User_02_Login"/>
+          <include name="initBeforeSuit"/>
+          <include name="beforeClass"/>
+          <include name="afterClass"/>
+          <include name="User_01_Register_Login"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_15_ExtentReportV2_Screenshort -->
+      <class name="com.nopcommerce.user.User_My_Account">
+        <methods>
+          <include name="initBeforeSuit"/>
+          <include name="beforeClass"/>
+          <include name="User_My_Account_004_Create_New_Review"/>
+          <include name="afterClass"/>
+          <include name="User_My_Account_002_Add_Address"/>
+          <include name="User_My_Account_001_Update_Info"/>
+          <include name="User_My_Account_003_Change_Password"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.User_My_Account -->
+      <class name="com.nopcommerce.user.User_Wishlist_Compare_RecentView">
+        <methods>
+          <include name="TC_03_Remove_Product_In_Wishlist_Page"/>
+          <include name="initBeforeSuit"/>
+          <include name="beforeClass"/>
+          <include name="TC_04_Add_Product_To_Compare"/>
+          <include name="TC_05_Recently_Viewed_Product"/>
+          <include name="TC_01_Add_To_Wishlist"/>
+          <include name="TC_02_Add_Product_To_Cart_From_Wishlist_Page"/>
+          <include name="afterClass"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.User_Wishlist_Compare_RecentView -->
+      <class name="com.nopcommerce.user.Level_09_Dynamic_Locator">
+        <methods>
+          <include name="User_01_Register_Login"/>
+          <include name="User_02_Dynamic_Switch_Page_01"/>
+          <include name="initBeforeSuit"/>
+          <include name="afterClass"/>
+          <include name="beforeClass"/>
+          <include name="User_02_Dynamic_Switch_Page_02"/>
+          <include name="User_02_Dynamic_Switch_Page_03"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_09_Dynamic_Locator -->
+      <class name="com.nopcommerce.user.Level_16_Share_Class_Data_C_Cookie">
+        <methods>
+          <include name="afterClass"/>
+          <include name="initBeforeSuit"/>
+          <include name="Search_02"/>
+          <include name="beforeClass"/>
+          <include name="Search_01"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_16_Share_Class_Data_C_Cookie -->
+      <class name="com.nopcommerce.user.User_Search_Advance_Search">
+        <methods>
+          <include name="TC_01_Search_Empty_Data"/>
+          <include name="afterClass"/>
+          <include name="initBeforeSuit"/>
+          <include name="TC_05_Advanced_Search_Parent_Categories"/>
+          <include name="TC_03_Search_Product_Name_Relative"/>
+          <include name="TC_06_Advanced_Search_Sub_Categories"/>
+          <include name="TC_04_Search_Product_Name_Absolute"/>
+          <include name="TC_02_Search_Data_Not_Exits"/>
+          <include name="beforeClass"/>
+          <include name="TC_07_Advanced_Search_Incorrect_Manufacturer"/>
+          <include name="TC_08_Advanced_Search_Correct_Manufacturer"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.User_Search_Advance_Search -->
+      <class name="com.nopcommerce.user.Level_05_My_Account_Page_Factory">
+        <methods>
+          <include name="initBeforeSuit"/>
+          <include name="Change_Password_003"/>
+          <include name="beforeClass"/>
+          <include name="afterClass"/>
+          <include name="Address_002_Add_Address"/>
+          <include name="Customer_Info_001_Update_Info"/>
+          <include name="My_Product_Views_004_Create_New_Review"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_05_My_Account_Page_Factory -->
+      <class name="com.nopcommerce.user.Level_04_Register_Multiple_Browser">
+        <methods>
+          <include name="TC_04_Register_Existing_Email"/>
+          <include name="initBeforeSuit"/>
+          <include name="afterClass"/>
+          <include name="TC_01_Register_Empty_Data"/>
+          <include name="TC_02_Register_Invalid_Email"/>
+          <include name="TC_05_Register_Password_Less_Than_6_Chars"/>
+          <include name="TC_06_Register_Invalid_Confirm_Password"/>
+          <include name="TC_03_Register_Success"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_04_Register_Multiple_Browser -->
+      <class name="com.nopcommerce.user.User_Order_Selenium_Grid">
+        <methods>
+          <include name="afterClass"/>
+          <include name="TC_01_Add_Product_To_Cart"/>
+          <include name="TC_04_Update_Shopping_Cart"/>
+          <include name="initBeforeSuit"/>
+          <include name="TC_05_Checkout_By_Cheque"/>
+          <include name="TC_06_Checkout_By_Cart"/>
+          <include name="beforeClass"/>
+          <include name="TC_02_Edit_Product_On_Shopping_Cart"/>
+          <include name="TC_07_Re_Order"/>
+          <include name="TC_03_Remove_From_Cart"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.User_Order_Selenium_Grid -->
+      <class name="com.nopcommerce.user.Level_15_ReportNG_Screenshort">
+        <methods>
+          <include name="User_02_Login"/>
+          <include name="initBeforeSuit"/>
+          <include name="beforeClass"/>
+          <include name="User_01_Register_Login"/>
+          <include name="afterClass"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_15_ReportNG_Screenshort -->
+      <class name="com.nopcommerce.user.Level_06_Login_Page_Generator_Manager_II">
+        <methods>
+          <include name="Login_002_Invalid_Email"/>
+          <include name="initBeforeSuit"/>
+          <include name="Login_004_Empty_Password"/>
+          <include name="afterClass"/>
+          <include name="Login_003_Not_Found_Email"/>
+          <include name="Login_001_Empty_Data"/>
+          <include name="beforeClass"/>
+          <include name="Login_005_Invalid_Password"/>
+          <include name="Login_006_Login_Success"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_06_Login_Page_Generator_Manager_II -->
+      <class name="com.nopcommerce.user.Level_01_Register_DRY">
+        <methods>
+          <include name="TC_04_Register_Existing_Email"/>
+          <include name="TC_01_Register_Empty_Data"/>
+          <include name="TC_02_Register_Invalid_Email"/>
+          <include name="TC_05_Register_Password_Less_Than_6_Chars"/>
+          <include name="afterClass"/>
+          <include name="TC_06_Register_Invalid_Confirm_Password"/>
+          <include name="TC_03_Register_Success"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_01_Register_DRY -->
+      <class name="com.nopcommerce.user.Level_02_Search_Apply_BasePage_Inheritance">
+        <methods>
+          <include name="TC_03_Search_Product_Name_Relative"/>
+          <include name="TC_04_Search_Product_Name_Absolute"/>
+          <include name="TC_06_Advanced_Search_Sub_Categories"/>
+          <include name="TC_05_Advanced_Search_Parent_Categories"/>
+          <include name="beforeClass"/>
+          <include name="TC_08_Advanced_Search_Correct_Manufacturer"/>
+          <include name="TC_01_Search_Empty_Data"/>
+          <include name="TC_02_Search_Data_Not_Exits"/>
+          <include name="afterClass"/>
+          <include name="TC_07_Advanced_Search_Incorrect_Manufacturer"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_02_Search_Apply_BasePage_Inheritance -->
+      <class name="com.nopcommerce.user.Level_17_Custom_Close_Driver">
+        <methods>
+          <include name="initBeforeSuit"/>
+          <include name="afterClass"/>
+          <include name="beforeClass"/>
+          <include name="TC_Create_Account_Info"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_17_Custom_Close_Driver -->
+      <class name="com.nopcommerce.user.Level_02_Register_Apply_BasePage_II_Encapsulation">
+        <methods>
+          <include name="TC_03_Register_Success"/>
+          <include name="beforeClass"/>
+          <include name="TC_06_Register_Invalid_Confirm_Password"/>
+          <include name="TC_01_Register_Empty_Data"/>
+          <include name="TC_02_Register_Invalid_Email"/>
+          <include name="TC_05_Register_Password_Less_Than_6_Chars"/>
+          <include name="TC_04_Register_Existing_Email"/>
+          <include name="afterClass"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_02_Register_Apply_BasePage_II_Encapsulation -->
+      <class name="com.nopcommerce.user.Level_02_My_Account_Apply_BasePage_Inheritance">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="beforeClass"/>
+          <include name="afterMethod"/>
+          <include name="TC_04_My_Product_Views"/>
+          <include name="afterClass"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_02_My_Account_Apply_BasePage_Inheritance -->
+      <class name="com.nopcommerce.user.Level_02_Register_Apply_BasePage_III_Inheritance">
+        <methods>
+          <include name="afterClass"/>
+          <include name="TC_01_Register_Empty_Data"/>
+          <include name="TC_04_Register_Existing_Email"/>
+          <include name="TC_05_Register_Password_Less_Than_6_Chars"/>
+          <include name="TC_03_Register_Success"/>
+          <include name="TC_02_Register_Invalid_Email"/>
+          <include name="beforeClass"/>
+          <include name="TC_06_Register_Invalid_Confirm_Password"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_02_Register_Apply_BasePage_III_Inheritance -->
+      <class name="com.nopcommerce.admin.Level_01_Customer">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="initBeforeSuit"/>
+          <include name="Customer_08_Delete_Address"/>
+          <include name="Customer_06_Add_New_Address"/>
+          <include name="Customer_05_Edit_Customer"/>
+          <include name="afterTest"/>
+          <include name="Customer_01_Create_New_Customer"/>
+        </methods>
+      </class> <!-- com.nopcommerce.admin.Level_01_Customer -->
+      <class name="com.nopcommerce.user.Level_15_ExtentReportV2">
+        <methods>
+          <include name="initBeforeSuit"/>
+          <include name="beforeClass"/>
+          <include name="User_01_Register_Login"/>
+          <include name="User_02_Login"/>
+          <include name="afterClass"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_15_ExtentReportV2 -->
+      <class name="com.nopcommerce.user.Level_06_Login_Page_Generator_Manager_III">
+        <methods>
+          <include name="Login_002_Invalid_Email"/>
+          <include name="Login_004_Empty_Password"/>
+          <include name="initBeforeSuit"/>
+          <include name="Login_005_Invalid_Password"/>
+          <include name="afterClass"/>
+          <include name="Login_006_Login_Success"/>
+          <include name="Login_003_Not_Found_Email"/>
+          <include name="Login_001_Empty_Data"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_06_Login_Page_Generator_Manager_III -->
+      <class name="com.nopcommerce.user.Level_07_Switch_Page">
+        <methods>
+          <include name="User_04_Switch_Role"/>
+          <include name="User_02_Login"/>
+          <include name="User_03_CustomerInfo"/>
+          <include name="User_01_Register"/>
+          <include name="initBeforeSuit"/>
+          <include name="afterClass"/>
+          <include name="User_04_Switch_Page"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_07_Switch_Page -->
+      <class name="com.nopcommerce.user.Level_03_Register_Page_Object">
+        <methods>
+          <include name="TC_01_Register_Empty_Data"/>
+          <include name="TC_04_Register_Existing_Email"/>
+          <include name="TC_05_Register_Password_Less_Than_6_Chars"/>
+          <include name="afterClass"/>
+          <include name="TC_02_Register_Invalid_Email"/>
+          <include name="beforeClass"/>
+          <include name="TC_06_Register_Invalid_Confirm_Password"/>
+          <include name="TC_03_Register_Success"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_03_Register_Page_Object -->
+      <class name="com.nopcommerce.user.Level_03_Login_Page_Object">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="Login_006_Login_Success"/>
+          <include name="Login_001_Empty_Data"/>
+          <include name="Login_003_Not_Found_Email"/>
+          <include name="Login_005_Invalid_Password"/>
+          <include name="Login_002_Invalid_Email"/>
+          <include name="Login_004_Empty_Password"/>
+          <include name="afterClass"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_03_Login_Page_Object -->
+      <class name="com.nopcommerce.user.Level_16_Share_Class_Data_A">
+        <methods>
+          <include name="initBeforeSuit"/>
+          <include name="afterClass"/>
+          <include name="Search_01"/>
+          <include name="Search_02"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_16_Share_Class_Data_A -->
+      <class name="com.nopcommerce.admin.Admin_01_Register_Login">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="afterClass"/>
+          <include name="TC_01"/>
+          <include name="TC_02"/>
+          <include name="TC_03"/>
+        </methods>
+      </class> <!-- com.nopcommerce.admin.Admin_01_Register_Login -->
+      <class name="com.nopcommerce.user.Level_16_Share_Class_Data_B">
+        <methods>
+          <include name="initBeforeSuit"/>
+          <include name="afterClass"/>
+          <include name="Search_02"/>
+          <include name="beforeClass"/>
+          <include name="Search_01"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_16_Share_Class_Data_B -->
+      <class name="com.nopcommerce.user.Level_06_Register_Page_Generator_Manager">
+        <methods>
+          <include name="TC_06_Register_Invalid_Confirm_Password"/>
+          <include name="initBeforeSuit"/>
+          <include name="TC_02_Register_Invalid_Email"/>
+          <include name="afterClass"/>
+          <include name="TC_01_Register_Empty_Data"/>
+          <include name="TC_04_Register_Existing_Email"/>
+          <include name="TC_05_Register_Password_Less_Than_6_Chars"/>
+          <include name="TC_03_Register_Success"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_06_Register_Page_Generator_Manager -->
+      <class name="com.nopcommerce.admin.Level_01_Search">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="initBeforeSuit"/>
+          <include name="afterTest"/>
+          <include name="Test_06_Go_Directly_To_Product_SKU"/>
+        </methods>
+      </class> <!-- com.nopcommerce.admin.Level_01_Search -->
+      <class name="com.nopcommerce.user.Level_05_Login_Page_Factory">
+        <methods>
+          <include name="Login_001_Empty_Data"/>
+          <include name="beforeClass"/>
+          <include name="initBeforeSuit"/>
+          <include name="Login_003_Not_Found_Email"/>
+          <include name="Login_006_Login_Success"/>
+          <include name="afterClass"/>
+          <include name="Login_005_Invalid_Password"/>
+          <include name="Login_002_Invalid_Email"/>
+          <include name="Login_004_Empty_Password"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_05_Login_Page_Factory -->
+      <class name="com.nopcommerce.user.Level_14_Log_ReportNG">
+        <methods>
+          <include name="initBeforeSuit"/>
+          <include name="User_02_Create_Account_Info"/>
+          <include name="beforeClass"/>
+          <include name="afterClass"/>
+          <include name="User_01_Register_Login"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_14_Log_ReportNG -->
+      <class name="com.nopcommerce.user.User_Sort_Display_Paging">
+        <methods>
+          <include name="TC_05_Display_3_Products"/>
+          <include name="initBeforeSuit"/>
+          <include name="TC_07_Display_9_Products"/>
+          <include name="afterClass"/>
+          <include name="TC_06_Display_6_Products"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.User_Sort_Display_Paging -->
+      <class name="com.nopcommerce.user.Level_12_Assert_Verify">
+        <methods>
+          <include name="initBeforeSuit"/>
+          <include name="beforeClass"/>
+          <include name="User_02_Dynamic_Switch_Page_02"/>
+          <include name="User_02_Dynamic_Switch_Page_03"/>
+          <include name="User_01_Register_Login"/>
+          <include name="User_02_Dynamic_Switch_Page_01"/>
+          <include name="afterClass"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_12_Assert_Verify -->
+      <class name="com.nopcommerce.user.Level_15_AllureReport">
+        <methods>
+          <include name="User_02_Login"/>
+          <include name="initBeforeSuit"/>
+          <include name="beforeClass"/>
+          <include name="afterClass"/>
+          <include name="User_01_Register_Login"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_15_AllureReport -->
+      <class name="com.nopcommerce.user.Level_02_Register_Apply_BasePage_I">
+        <methods>
+          <include name="TC_01_Register_Empty_Data"/>
+          <include name="TC_02_Register_Invalid_Email"/>
+          <include name="TC_05_Register_Password_Less_Than_6_Chars"/>
+          <include name="TC_06_Register_Invalid_Confirm_Password"/>
+          <include name="TC_04_Register_Existing_Email"/>
+          <include name="afterClass"/>
+          <include name="beforeClass"/>
+          <include name="TC_03_Register_Success"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_02_Register_Apply_BasePage_I -->
+      <class name="com.nopcommerce.user.Level_21_User_Register_Multiple_Env_Owner">
+        <methods>
+          <include name="TC_01_Register_Empty_Data"/>
+          <include name="initBeforeSuit"/>
+          <include name="TC_03_Register_Success"/>
+          <include name="beforeClass"/>
+          <include name="afterClass"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_21_User_Register_Multiple_Env_Owner -->
       <class name="com.nopcommerce.user.User_Order">
         <methods>
           <include name="initBeforeSuit"/>
@@ -23,6 +460,55 @@
           <include name="TC_06_Checkout_By_Cart"/>
         </methods>
       </class> <!-- com.nopcommerce.user.User_Order -->
+      <class name="com.nopcommerce.user.Level_05_Register_Page_Factory">
+        <methods>
+          <include name="initBeforeSuit"/>
+          <include name="TC_03_Register_Success"/>
+          <include name="beforeClass"/>
+          <include name="TC_01_Register_Empty_Data"/>
+          <include name="TC_04_Register_Existing_Email"/>
+          <include name="TC_05_Register_Password_Less_Than_6_Chars"/>
+          <include name="TC_02_Register_Invalid_Email"/>
+          <include name="afterClass"/>
+          <include name="TC_06_Register_Invalid_Confirm_Password"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_05_Register_Page_Factory -->
+      <class name="com.nopcommerce.user.Level_06_Login_Page_Generator_Manager_I">
+        <methods>
+          <include name="Login_002_Invalid_Email"/>
+          <include name="Login_004_Empty_Password"/>
+          <include name="initBeforeSuit"/>
+          <include name="Login_005_Invalid_Password"/>
+          <include name="afterClass"/>
+          <include name="Login_006_Login_Success"/>
+          <include name="Login_003_Not_Found_Email"/>
+          <include name="Login_001_Empty_Data"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_06_Login_Page_Generator_Manager_I -->
+      <class name="com.nopcommerce.user.Level_03_My_Account_Page_Object">
+        <methods>
+          <include name="afterClass"/>
+          <include name="My_Product_Views_004_Create_New_Review"/>
+          <include name="Change_Password_003"/>
+          <include name="beforeClass"/>
+          <include name="Address_002_Add_Address"/>
+          <include name="Customer_Info_001_Update_Info"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.Level_03_My_Account_Page_Object -->
+      <class name="com.nopcommerce.user.User_Login">
+        <methods>
+          <include name="Login_005_Invalid_Password"/>
+          <include name="initBeforeSuit"/>
+          <include name="Login_001_Empty_Data"/>
+          <include name="Login_002_Invalid_Email"/>
+          <include name="afterClass"/>
+          <include name="Login_004_Empty_Password"/>
+          <include name="Login_003_Not_Found_Email"/>
+          <include name="Login_006_Login_Success"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.User_Login -->
     </classes>
-  </test> <!-- Run on FIREFOX(failed) -->
-</suite> <!-- Failed suite [Nopcommerce] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
