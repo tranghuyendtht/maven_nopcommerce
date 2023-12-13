@@ -189,7 +189,7 @@
 				<printSummary>true</printSummary>
 					<!-- Run TestNG xml file -->
 					<suiteXmlFiles>
-						<suiteXmlFile>src/test/resources/runNopcommerceUser_Grid.xml</suiteXmlFile>
+						<suiteXmlFile>src/test/resources/runOrangeHRM.xml</suiteXmlFile>
 					</suiteXmlFiles>
 
 					<!-- Argument -->

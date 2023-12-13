@@ -1870,3 +1870,7 @@
 [2023-08-31 15:23:44,170] Pre-Condition: Navigate to Login page
 [2023-08-31 15:23:45,308] Pre-Condition: Set cookies and reload page
 [2023-08-31 15:23:55,439]  -------------------------- PASSED -------------------------- 
+[2023-12-13 19:02:02,365] Pre-Condition - Step 01: Navigate to Login Admin Page
+[2023-12-13 19:02:02,426] Run on FIREFOX
+[2023-12-13 19:02:04,397] OS name = windows 10
+[2023-12-13 19:02:04,397] Cannot invoke "Object.toString()" because "this.driver" is null

@@ -11,6 +11,7 @@ import org.aeonbits.owner.Config;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.Platform;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxBinary;
@@ -105,6 +106,7 @@ public class BaseTest {
 			throw new RuntimeException("Please check your browser name!");
 
 		}
+		
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.get(appUrl);
 

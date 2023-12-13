@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="none" name="orangeHRM - Web Automation UI">
+
+	<listeners>
+		<listener class-name="reportConfig.ExtentTestListener" />
+	</listeners>
+	
+	<test name="Run on Chrome">
+		<parameter name="browser" value="chrome" />
+		<parameter name="url" value="http://testing-orangehrm:90/orangehrm5" />
+		<classes>
+			<class name="com.orangehrm.pim.PIM_01_Employee" />
+		</classes>
+	</test>
+
+	<test name="Run on Firefox">
+		<parameter name="browser" value="chrome" />
+		<parameter name="url" value="http://testing-orangehrm:90/orangehrm5" />
+
+		<classes>
+			<class name="com.orangehrm.pim.PIM_01_Employee" />
+		</classes>
+	</test>
+
+	<test name="Run on Edge">
+		<parameter name="browser" value="edge" />
+		<parameter name="url" value="http://testing-orangehrm:90/orangehrm5" />
+		<classes>
+			<class name="com.orangehrm.pim.PIM_01_Employee" />
+		</classes>
+	</test>
+
+	<test name="Run on CocCoc">
+		<parameter name="browser" value="coccoc" />
+		<parameter name="url" value="http://testing-orangehrm:90/orangehrm5" />
+		<classes>
+			<class name="com.orangehrm.pim.PIM_01_Employee" />
+		</classes>
+	</test>
+
+
+</suite>
+
